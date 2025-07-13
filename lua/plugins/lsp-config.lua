@@ -4,7 +4,10 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
-      ensure_isntalled = { "vue_ls" },
+      ensure_installed = {
+        "lua_ls",
+        "vue_ls",
+      },
     },
     dependencies = {
       { "mason-org/mason.nvim",  opts = {} },
