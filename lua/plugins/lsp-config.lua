@@ -7,6 +7,7 @@ return {
       ensure_installed = {
         "lua_ls",
         "vue_ls",
+        "ruby_lsp",
       },
     },
     dependencies = {
@@ -27,7 +28,8 @@ return {
       )
 
       local lspconfig = require("lspconfig")
-
+      lspconfig.ruby_lsp.setup({
+        capabilities = capabilities,
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
