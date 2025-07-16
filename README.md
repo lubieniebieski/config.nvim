@@ -32,6 +32,14 @@ My personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/)
    make install nvim zsh git
    ```
 
+## Local Configuration
+
+The zsh configuration supports a local config file for machine-specific settings:
+
+- Create `~/.zshrc.local` for your personal/local configurations
+- This file will be automatically sourced if it exists
+- Keeps your dotfiles clean while allowing customization
+
 ## Usage
 
 ```bash
