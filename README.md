@@ -13,7 +13,7 @@ My personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/)
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/lubieniebieski/dotfiles.git ~/.dotfiles
+   git clone --recurse-submodules https://github.com/lubieniebieski/dotfiles.git ~/.dotfiles
    cd ~/.dotfiles
    ```
 
@@ -39,6 +39,16 @@ The zsh configuration supports a local config file for machine-specific settings
 - Create `~/.zshrc.local` for your personal/local configurations
 - This file will be automatically sourced if it exists
 - Keeps your dotfiles clean while allowing customization
+
+## Tmux Plugin Manager
+
+After installing the tmux package, install tmux plugins:
+
+```bash
+# Open tmux and install plugins
+tmux
+# Press prefix (Ctrl-s) + I to install plugins
+```
 
 ## Usage
 

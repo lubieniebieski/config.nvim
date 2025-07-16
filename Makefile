@@ -24,7 +24,7 @@ YELLOW := \033[1;33m
 RED := \033[0;31m
 NC := \033[0m # No Color
 
-.PHONY: help check install uninstall install-all uninstall-all list clean
+.PHONY: help check install uninstall install-all uninstall-all list clean restow
 
 help: ## Show this help message
 	@echo "$(GREEN)Dotfiles Management with GNU Stow$(NC)"

@@ -1,3 +1,6 @@
 [submodule "zsh/.slimzsh"]
 	path = zsh/.slimzsh
 	url = https://github.com/changs/slimzsh.git
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
