@@ -17,19 +17,20 @@ My personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/)
    cd ~/.dotfiles
    ```
 
-2. Install all packages:
+2. List available packages:
 
    ```bash
-   make install
+   make list
    ```
 
-3. Or install specific packages:
+3. Install specific packages (recommended):
 
    ```bash
    make install nvim
-   
-   # Install multiple packages
-   make install nvim zsh git
+   make install zsh
+   make install tmux
+   # Or install multiple at once
+   make install nvim zsh tmux
    ```
 
 ## Local Configuration
@@ -59,20 +60,18 @@ make help
 # List available packages
 make list
 
-# Install all packages
-make install
-
-# Install specific packages
+# Install specific packages (recommended)
 make install nvim
-make install nvim zsh git
-
-# Uninstall all packages
-make uninstall
+make install zsh
+make install tmux
 
 # Uninstall specific packages
 make uninstall nvim
-make uninstall nvim zsh
+make uninstall zsh
+make uninstall tmux
 
 # Clean up broken symlinks
 make clean
 ```
+
+> **Note:** It's recommended to install only the packages you need (e.g. `make install nvim zsh tmux`). Avoid using `make install` for all packages unless you know you want everything. Use `make list` to see available packages and pick the ones you want.

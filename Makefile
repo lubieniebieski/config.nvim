@@ -53,14 +53,15 @@ list: ## List available packages
 	@echo "$(YELLOW)Available packages:$(NC)"
 	@for pkg in $(PACKAGES); do echo "  - $$pkg"; done
 
-install: check ## Install packages (all if no args, or specific packages: make install nvim tmux)
+install: check ## Install packages (pick specific ones)
 	@if [ "$(MAKECMDGOALS)" = "install" ] && [ -z "$(filter-out install,$(MAKECMDGOALS))" ]; then \
-		echo "$(GREEN)Installing all packages...$(NC)"; \
-		for pkg in $(PACKAGES); do \
-			echo "$(GREEN)Installing: $$pkg$(NC)"; \
-			$(STOW) --dir=$(STOW_DIR) --target=$(TARGET_DIR) --verbose $$pkg; \
-		done; \
-		echo "$(GREEN)All packages installed successfully!$(NC)"; \
+		echo "$(YELLOW)Available packages:$(NC)"; \
+		for pkg in $(PACKAGES); do echo "  - $$pkg"; done; \
+		echo ""; \
+		echo "$(RED)Do NOT use 'make install' to install all packages."; \
+		echo "$(YELLOW)It's recommended to pick only the packages you need, e.g.:$(NC)"; \
+		echo "  make install nvim zsh tmux"; \
+		exit 1; \
 	else \
 		target_packages="$(filter-out install,$(MAKECMDGOALS))"; \
 		if [ -n "$$target_packages" ]; then \
